@@ -1,0 +1,27 @@
+---
+- name: Disable ssh password auth
+  hosts: all
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: 
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '^#PasswordAuthentication'
+      line: 'PasswordAuthentication no'
+    notify: sshd restart
+
+  - name: 
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '^#ChallengeResponseAuthentication'
+      line: 'ChallengeResponseAuthentication no'
+    notify: sshd restart
+
+  handlers:
+  - name: sshd restart
+    systemd:
+      name: sshd
+      state: restarted
+
