@@ -3,9 +3,9 @@
 
 sshd_config
 
-//# If you just want the PAM account and session checks to run without
-//# PAM authentication, then enable this but set PasswordAuthentication
-//# and ChallengeResponseAuthentication to 'no'.
+    //# If you just want the PAM account and session checks to run without
+    //# PAM authentication, then enable this but set PasswordAuthentication
+    //# and ChallengeResponseAuthentication to 'no'.
 
 Использование:
 
