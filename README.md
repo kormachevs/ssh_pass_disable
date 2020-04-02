@@ -19,3 +19,4 @@ sshd_config
 ansible-playbook ssh_disable_pass.yaml
 
 Будет отключена авторизация только на тех хостак, куда есть доступ по ключу и ansible_ssh_pass не определена. 
+____
